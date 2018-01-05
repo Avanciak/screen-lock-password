@@ -41,7 +41,7 @@ public class PasswdChecker {
         return password;
     }
     public void setPassword() {
-       this.password = this.readPasswordFromFile("haslo.txt");
+       this.password = this.readPasswordFromFile("password.txt");
    }
     
     public void initialize() {
@@ -58,7 +58,7 @@ public class PasswdChecker {
         window.setResizable(false);
         window.setUndecorated(true);
         window.setOpacity(0.5f);
-        window.setTitle("Sprawdza hasło");
+        window.setTitle("Password check");
         //window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         
@@ -72,7 +72,7 @@ public class PasswdChecker {
         window.add(input);
         
         JLabel output = new JLabel();
-        output.setText("Wprowadź hasło:");
+        output.setText("Enter the password:");
         output.setBounds(5, 5, 190, 20);
         output.setFont(new Font("DIALOG",0,20));
         output.setVisible(true);
@@ -85,7 +85,7 @@ public class PasswdChecker {
                 if(e.getKeyCode() == KeyEvent.VK_ENTER){
                     setPassword();
                     if(String.valueOf(input.getPassword()).equals(password)) {
-                        output.setText("Hasło prawidłowe!");
+                        output.setText("Password correct!");
                         output.setForeground(new Color(50,130,0));
                         window.paintAll(g);
                                                
@@ -102,7 +102,7 @@ public class PasswdChecker {
                     }
                     else
                        
-                        output.setText("Brak dostepu!!!");
+                        output.setText("Acces denied!!!");
                         output.setForeground(new Color(150,30,0));
                         window.paintAll(g);
                 }
