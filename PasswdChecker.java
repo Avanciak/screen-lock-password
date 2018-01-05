@@ -41,7 +41,7 @@ public class PasswdChecker {
         return password;
     }
     public void setPassword() {
-       this.password = this.readPasswordFromFile("haslo.txt");
+       this.password = this.readPasswordFromFile("password.txt");
    }
     
     public void initialize() {
